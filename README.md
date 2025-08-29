@@ -1,15 +1,18 @@
-Создаем docker-compose.yml и запускаем контейнер с MySQL командой ниже (должен быть установлен и запущен Docker)
-# docker-compose up -d mysql
+# Создаем docker-compose.yml и запускаем контейнер с MySQL командой ниже (должен быть установлен и запущен Docker)
+docker-compose up -d mysql
 
-Создаем файл .env с настройками подключения к базе данных
+# Создаем файл .env с настройками подключения к базе данных
 Устанавливаем зависимости Python командой:
-# pip install -r requirements.txt
+pip install -r requirements.txt
 
-Так же запускаем скрипт инициализации базы данных
-# python scripts/init_db.py
+# Так же запускаем скрипт инициализации базы данных
+python scripts/init_db.py
 
-После запускаем наше приложение командой ниже и переходим на http://localhost:8000 , после чего на http://localhost:8000/docs
-# uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+# После запускаем наше приложение командой ниже и переходим на http://localhost:8000 , после чего на http://localhost:8000/docs
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Для остановки контейнера вводим команду 
+docker-compose down
 
 Для входа используем логин: user1 и пароль: password1
 
